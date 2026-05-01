@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Lexend:wght@300;400;500;600&display=swap");
+
+@import "tailwindcss";
+
+/* ─── CSS Custom Properties ─────────────────────────────────────────────── */
+:root {
+  --color-primary: #005c55;
+  --color-secondary: #2b6954;
+  --color-tertiary: #7f4025;
+  --color-surface: #f9f9ff;
+  --color-background: #f9f9ff;
+  --color-on-surface: #151c27;
+}
+
+/* ─── Base Styles ────────────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Lexend", sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-on-surface);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6, .font-inter {
+  font-family: "Inter", sans-serif;
+}
+
+/* ─── Islamic Pattern Background ────────────────────────────────────────── */
+.islamic-pattern-bg {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l2.5 12.5L45 15l-12.5 2.5L30 30l-2.5-12.5L15 15l12.5-2.5z' fill='%230f766e' fill-opacity='0.04' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+.islamic-pattern-hero {
+  background-color: #005c55;
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 0l3 16L56 20l-16 3L40 40l-3-16L24 20l16-3z M0 40l3 16L16 60l-16 3L0 80l-3-16L-16 60l16-3z M80 40l3 16L96 60l-16 3L80 80l-3-16L64 60l16-3z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+/* ─── Glassmorphism ──────────────────────────────────────────────────────── */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-white {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* ─── Shimmer Loading Effect ─────────────────────────────────────────────── */
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    #e2e8f8 25%,
+    #f0f3ff 50%,
+    #e2e8f8 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ─── Status Badge Colors ────────────────────────────────────────────────── */
+.badge-lulus {
+  background-color: #005c55;
+  color: #ffffff;
+}
+
+.badge-tidak-lulus {
+  background-color: #2a313d;
+  color: #ffffff;
+}
+
+.badge-pending {
+  background-color: #7f4025;
+  color: #ffffff;
+}
+
+/* ─── Result Card Glow ───────────────────────────────────────────────────── */
+.glow-success {
+  box-shadow: 0 0 40px rgba(0, 92, 85, 0.2), 0 0 80px rgba(0, 92, 85, 0.08);
+}
+
+.glow-neutral {
+  box-shadow: 0 0 40px rgba(42, 49, 61, 0.12), 0 0 80px rgba(42, 49, 61, 0.05);
+}
+
+/* ─── Custom Scrollbar ───────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f3ff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #bdc9c6;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6e7977;
+}
+
+/* ─── Print Styles (for SKL PDF preview) ────────────────────────────────── */
+@media print {
+  nav, footer, .no-print {
+    display: none !important;
+  }
+  body {
+    background: white;
+  }
+}
+
+/* ─── Confetti Container ─────────────────────────────────────────────────── */
+.confetti-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 100;
+}
+
+/* ─── Input Focus Ring ───────────────────────────────────────────────────── */
+.input-focus:focus {
+  outline: none;
+  border-color: #005c55;
+  box-shadow: 0 0 0 3px rgba(0, 92, 85, 0.15);
+}
+
+/* ─── Hero Section Background ────────────────────────────────────────────── */
+.hero-bg {
+  background-image: url('/hero-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-overlay {
+  background: linear-gradient(135deg, rgba(0, 46, 42, 0.85) 0%, rgba(0, 92, 85, 0.75) 50%, rgba(0, 61, 56, 0.85) 100%);
+}
+
+/* ─── Floating Animation ─────────────────────────────────────────────────── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* ─── Pulse Ring ─────────────────────────────────────────────────────────── */
+@keyframes pulseRing {
+  0% { transform: scale(0.8); opacity: 1; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+.pulse-ring::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  animation: pulseRing 1.5s ease-out infinite;
+}
+
+/* ─── Table Row Hover ────────────────────────────────────────────────────── */
+.table-row-hover:hover {
+  background-color: #f0f3ff;
+  transition: background-color 0.15s ease;
+}
+
+/* ─── Sidebar Active Link ────────────────────────────────────────────────── */
+.sidebar-active {
+  background-color: #f0fdf9;
+  color: #005c55;
+  border-right: 4px solid #005c55;
+  font-weight: 600;
+}
