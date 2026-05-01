@@ -126,7 +126,7 @@ export async function GET(request: NextRequest) {
 
     const filename = `SKL-${applicant.nisn}-${applicant.full_name.replace(/\s+/g, "_")}.pdf`;
 
-    return new NextResponse(pdfBuffer, {
+    return new NextResponse(pdfBuffer as unknown as BodyInit, {
       status: 200,
       headers: {
         "Content-Type": "application/pdf",
